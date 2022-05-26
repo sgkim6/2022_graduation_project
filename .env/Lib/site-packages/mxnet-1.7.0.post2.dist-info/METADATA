@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: mxnet
+Version: 1.7.0.post2
+Summary: MXNet is an ultra-scalable deep learning framework. This version uses openblas.
+Home-page: https://github.com/apache/incubator-mxnet
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: Apache 2.0
+Requires-Dist: numpy (<1.17.0,>=1.8.2)
+Requires-Dist: requests (<2.19.0,>=2.18.4)
+Requires-Dist: graphviz (<0.9.0,>=0.8.1)
+
+MXNet Python Package
+
+

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!--jQuery 연동하기-->
+	<script src="{% static 'js/jscript.js' %}"></script>
+	<title>PA#1</title>
+</head>
+
+<body>
+	<div id="page_wrapper">
+
+		<div id="content">
+			<div id="program_title">
+				한글 문장 감성분석
+			</div>
+
+			<div id="program_description">
+				한글 문장의 긍정/부정을 판별합니다.
+			</div>
+
+			<form method="post" id="myform" action="/index.html">
+				<input id="review_input" type="text" name="review_input" placeholder="입력하세요.">
+				<input id="review_submit" type="button" value="제출">
+			</form>
+
+			<div id="analysis">
+				<p>[분석할 문장]</p>
+				<div id="review_analysis" class="result">
+					분석할 문장을 여기에 쏘세요.
+				</div>
+				<p>[분석 결과]</p>
+				<div id="review_analysis_result" class="result">
+					<span id="senti"></span> / 정확도 : <span id="accuracy"></span>%
+				</div>
+			</div>
+		</div>
+
+		<footer id="main_footer">
+			<p>#졸업프로젝트2 # 6팀 # 2022</p>
+		</footer>
+
+	</div>
+</body>
+
+</html>
