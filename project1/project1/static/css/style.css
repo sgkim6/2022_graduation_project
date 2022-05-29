@@ -52,18 +52,18 @@ footer > p{
 
 #review_input {
     font-family: 'Gowun Batang', serif;
-     width: 500px;
-     height: 40px;
-     font-size: 15px;
-     font-weight: bold;
-     border: none;
-     display: block;
-     background-color: gainsboro;
-     text-align: center;
-     width: 500px;
-     border-radius: 6px;
-     margin: 0px auto;
-     margin-top: 20px;
+    width: 500px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    display: block;
+    background-color: gainsboro;
+    text-align: center;
+    width: 500px;
+    border-radius: 6px;
+    margin: 0px auto;
+    margin-top: 20px;
  }
 
 #review_submit {
@@ -91,7 +91,7 @@ footer > p{
     box-shadow: 3px 3px 5px 0px rgb(192, 237, 166);
     color: black;
     transform: translateY(2px);
-  }
+}
 
 #analysis{
     display: none; /**/
@@ -117,15 +117,91 @@ footer > p{
     text-align: center;
 }
 
- /*
-<div id="analysis">
-	<p>[분석할 문장]</p>
-    <div id="review-analysis">
+#check_wrapper{
+    width: 230px;
+    overflow: hidden;
+    margin: 0px auto;
+    padding: 15px;
+}
 
-    </div>
-    <p>[분석 결과]</p>
-    <div id="review-analysis-result">
+label:nth-of-type(1){
+    font-family: 'Gowun Batang', serif;
+    background-color:#FD5D5D;
+    float: left;
+    color:white;
+    display: block;
+    width: 100px; height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 6px;
+    border: 0;
+    outline: 0;
+    box-shadow: 3px 3px 5px 0px rgb(85, 30, 32);
+    margin: 0px auto;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+label:nth-of-type(2){
+    font-family: 'Gowun Batang', serif;
+    background-color:#FD5D5D;
+    float: right;
+    color:white;
+    display: block;
+    width: 100px; height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 6px;
+    border: 0;
+    outline: 0;
+    box-shadow: 3px 3px 5px 0px rgb(85, 30, 32);
+    margin: 0px auto;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
 
-    </div>
-</div>
-*/
+input:nth-of-type(1), input:nth-of-type(2) {display: none;}
+input:nth-of-type(1):checked ~ label:nth-of-type(1) {
+    background-color: white;
+    box-shadow: 3px 3px 5px 0px rgb(192, 237, 166);
+    color: black;
+    transform: translateY(2px);
+}
+input:nth-of-type(2):checked ~ label:nth-of-type(2) {
+    background-color: white;
+    box-shadow: 3px 3px 5px 0px rgb(192, 237, 166);
+    color: black;
+    transform: translateY(2px);
+}
+
+#database_submit {
+    font-family: 'Gowun Batang', serif;
+    background-color:#24def7;
+    color:white;
+    display: block;
+    width: 230px; height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 6px;
+    border: 0;
+    outline: 0;
+    box-shadow: 3px 3px 5px 0px rgb(7, 93, 119);
+    margin: 0px auto;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+#database_submit:hover {
+    background-color: #FFF7BC;
+    box-shadow: 3px 3px 5px 0px rgb(192, 237, 166);
+    color: black;
+    transform: translateY(2px);
+}

@@ -6,10 +6,12 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<!--jQuery 연동하기-->
 	<script src="{% static 'js/jscript.js' %}"></script>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- <link rel="stylesheet" href="style.css">
+	<script src="jscript.js"></script> -->
 	<title>PA#1</title>
 </head>
 
@@ -39,6 +41,16 @@
 				<div id="review_analysis_result" class="result">
 					<span id="senti"></span> / 정확도 : <span id="accuracy"></span>%
 				</div>
+				<form method="post" id="checkBox" action="">
+					<div id="check_wrapper">
+						<input id="positive" type="radio" name="check" value="POSITIVE">
+						<input id="negative" type="radio" name="check" value="NEGATIVE">
+
+						<label for="positive">긍정</label>
+						<label for="negative">부정</label>
+					</div>
+					<input id="database_submit" type="button" value="제출">
+				</form>
 			</div>
 		</div>
 

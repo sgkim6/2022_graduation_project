@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from .views import Sub
 from .views import Api
+from .views import DB
 #from content.views import Main
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Sub.as_view()),
     path('api/', Api.as_view()),
+    path('api2/', DB.as_view()),
 ]
+

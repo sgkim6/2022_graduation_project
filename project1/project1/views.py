@@ -4,6 +4,7 @@ from django.http import HttpRequest, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from classifier import classifier
 from django.http import JsonResponse
+import sqlite3 as sq3
 
 class Sub(APIView):
     def get(self,request):
@@ -20,3 +21,20 @@ class Api(APIView):
         print(data)
         
         return JsonResponse(data)
+    
+class DB(APIView):
+    def post(self, request):
+        input_review = request.POST['review']
+        input_result = request.POST['result']
+        
+        con = sq3.connect('./db.sqlite3', isolation_level= None)
+        
+        c = con.cursor()
+        
+        c.execute('INSERT INTO user_Data(REVIEW, RESULT) VALUES(?,?)',(input_review, input_result))
+        
+        con.close()
+        
+        return JsonResponse({'review' : input_review, 'reslut' : input_result})
+        
+        
