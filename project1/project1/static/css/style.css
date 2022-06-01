@@ -66,7 +66,7 @@ footer > p{
     margin-top: 20px;
  }
 
-#review_submit {
+#review_submit, #log_download {
     font-family: 'Gowun Batang', serif;
     background-color:#FD5D5D;
     color:white;
@@ -86,7 +86,7 @@ footer > p{
     cursor: pointer;
 }
 
-#review_submit:hover {
+#review_submit:hover,  #log_download:hover {
     background-color: #FFF7BC;
     box-shadow: 3px 3px 5px 0px rgb(192, 237, 166);
     color: black;

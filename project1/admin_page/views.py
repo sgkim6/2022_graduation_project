@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from classifier import classifier
 from django.http import JsonResponse
 import sqlite3 as sq3
+import pandas as pd
 
 # Create your views here.
 
@@ -31,6 +32,8 @@ class Admin_page(APIView):
         
         return render(request, "project_2022/admin.html",{'data_list':data_list})
 
+
+#현재 사용중인 모델 정보 DB에 저장
 class Set_model(APIView):
     def post(self, request):
         model_name = request.POST.get('model_name')
@@ -45,3 +48,18 @@ class Set_model(APIView):
 
         con.close()
         return JsonResponse({'model_name':model_name})
+
+#유저 입력 로그 다운로드
+class Download_Log(APIView):
+    def post(self, request):
+        data = request.POST.get('data')
+        con = sq3.connect('./db.sqlite3', isolation_level= None)
+        c = con.cursor()
+        query = c.execute("SELECT REVIEW,RESULT FROM user_Data")
+        cols = [column[0] for column in query.description]
+        result = pd.DataFrame.from_records(data=query.fetchall(), columns=cols)
+        print(result)
+        result.to_csv("project1/static/csv/log.csv", encoding=('utf-8-sig'))
+        con.close()
+
+        return JsonResponse({'data':data})

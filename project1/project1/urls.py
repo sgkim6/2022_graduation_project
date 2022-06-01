@@ -20,6 +20,7 @@ from .views import Api
 from .views import DB
 from admin_page.views import Admin_page
 from admin_page.views import Set_model
+from admin_page.views import Download_Log
 #from content.views import Main
 
 urlpatterns = [
@@ -28,6 +29,8 @@ urlpatterns = [
     path('api/', Api.as_view()),
     path('api2/', DB.as_view()),
     path('adm/', Admin_page.as_view()),
-    path('adm/change/',Set_model.as_view())
+    path('adm/change/',Set_model.as_view()),
+    path('adm/download/',Download_Log.as_view()),
+    
 ]
 
