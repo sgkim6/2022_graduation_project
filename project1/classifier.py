@@ -5,11 +5,10 @@ from transformers import TextClassificationPipeline
 from transformers import BertTokenizerFast
 from transformers import TFBertForSequenceClassification
 
-
 # 모델 로드하기
-def load_model():    
-    loaded_tokenizer = BertTokenizerFast.from_pretrained('nsmc_model/bert-base')
-    loaded_model = TFBertForSequenceClassification.from_pretrained('nsmc_model/bert-base')
+def load_model(model_dir):    
+    loaded_tokenizer = BertTokenizerFast.from_pretrained(model_dir)
+    loaded_model = TFBertForSequenceClassification.from_pretrained(model_dir)
     text_classifier = TextClassificationPipeline(
         tokenizer=loaded_tokenizer, 
         model=loaded_model, 
@@ -21,11 +20,9 @@ def load_model():
 #텍스트 분류기 정의
 
 
-model_name = "tf_model.h5"
-
 #텍스트 분류기
-def classifier(sentence):
-    text_classifier = load_model()
+def classifier(sentence,model_dir):
+    text_classifier = load_model(model_dir)
     score = text_classifier(sentence)[0][1]['score']
     senti = ''
     if score >= 0.5:
@@ -43,3 +40,4 @@ def classifier(sentence):
     # print(f"{score}% 확률로 {senti} 문장입니다.")
 
     return {'senti' : senti, 'score' : score}
+

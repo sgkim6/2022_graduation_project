@@ -16,8 +16,19 @@ class Sub(APIView):
 class Api(APIView):
     @csrf_exempt
     def post(self,request):
+
+        con = sq3.connect('./db.sqlite3', isolation_level= None)
+        
+        c = con.cursor()
+
+        c.execute("SELECT dir FROM using_model")
+
+        model_dir = c.fetchall()[0][0]
+        print(model_dir)
+
+
         input_text = request.POST['review']
-        data = classifier(input_text)
+        data = classifier(input_text, model_dir)
         print(data)
         
         return JsonResponse(data)
@@ -36,5 +47,4 @@ class DB(APIView):
         con.close()
         
         return JsonResponse({'review' : input_review, 'reslut' : input_result})
-        
         

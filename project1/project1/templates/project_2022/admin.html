@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--jQuery 연동하기-->
+    <script src="{% static 'js/admin_page.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Admin</title>
+</head>
+
+<body>
+
+    <div id="page_wrapper">
+
+        <div id="content">
+            <div id="program_title">
+                사용할 모델 설정
+            </div>
+
+            <div id="program_description">
+                적용할 모델을 선택합니다
+            </div>
+
+            <form method="post" id="myform" action="/index.html">
+                <select id="select">
+                    <option id="selected_model">{%for model_info in data_list%}{{model_info.0}}{%endfor%}</option>
+                </select>
+
+                <input id="review_submit" type="button" value="제출">
+            </form>
+
+
+        </div>
+
+        <div id="content">
+            <div id="program_title">
+                유저 입력 결과 조회
+            </div>
+
+            <div id="program_description">
+                지금까지의 유저 입력과 결과를 조회합니다.
+            </div>
+
+            <form method="post" id="myform" action="/index.html">
+                <input type="submit" value="조회" />
+            </form>
+
+        </div>
+
+        <footer id="main_footer">
+            <p>#졸업프로젝트2 # 6팀 # 2022</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

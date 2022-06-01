@@ -18,6 +18,8 @@ from django.urls import path
 from .views import Sub
 from .views import Api
 from .views import DB
+from admin_page.views import Admin_page
+from admin_page.views import Set_model
 #from content.views import Main
 
 urlpatterns = [
@@ -25,5 +27,7 @@ urlpatterns = [
     path('', Sub.as_view()),
     path('api/', Api.as_view()),
     path('api2/', DB.as_view()),
+    path('adm/', Admin_page.as_view()),
+    path('adm/change/',Set_model.as_view())
 ]
 

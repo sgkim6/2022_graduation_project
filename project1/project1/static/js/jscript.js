@@ -10,7 +10,8 @@ function click_Submit() {
     $.ajax({
         url : '/api/',
         data: {
-            review: Data
+            review: Data,
+            model_dir: Model_dir
         },
         type: "POST",
         dataType: "json",
