@@ -1,11 +1,6 @@
 window.onload = function(){
     document.getElementById("review_submit").onclick = model_Submit;
     document.getElementById("log_download").onclick = download_Submit;
-    document.getElementById("user_page").onclick = user_Page;
-}
-
-function user_Page(){
-
 }
 
 function model_Submit() {
