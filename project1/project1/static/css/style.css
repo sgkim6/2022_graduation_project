@@ -33,6 +33,24 @@ footer > p{
  	text-align: center;
  }
 
+#admin_page{
+    display: block;
+    color: black;
+    font-family: 'Gowun Batang', serif;
+    width: 130px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 7px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+}
+#admin_page:hover{
+    font-size: 14px;
+}
+#admin:visited { color: black; }
+
 #program_title {
     font-family: 'Gowun Batang', serif;
     font-weight: bold;
@@ -165,14 +183,14 @@ label:nth-of-type(2){
     cursor: pointer;
 }
 
-input:nth-of-type(1), input:nth-of-type(2) {display: none;}
-input:nth-of-type(1):checked ~ label:nth-of-type(1) {
+#positive, #negative {display: none;}
+#positive:checked ~ label:nth-of-type(1) {
     background-color: white;
     box-shadow: 3px 3px 5px 0px rgb(192, 237, 166);
     color: black;
     transform: translateY(2px);
 }
-input:nth-of-type(2):checked ~ label:nth-of-type(2) {
+#negative:checked ~ label:nth-of-type(2) {
     background-color: white;
     box-shadow: 3px 3px 5px 0px rgb(192, 237, 166);
     color: black;
@@ -214,3 +232,21 @@ input:nth-of-type(2):checked ~ label:nth-of-type(2) {
 #myform {
     text-align: center;
 }
+
+#user_page{
+    display: block;
+    color: black;
+    font-family: 'Gowun Batang', serif;
+    width: 130px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 7px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+}
+#user_page:hover{
+    font-size: 14px;
+}
+#user:visited { color: black; }
