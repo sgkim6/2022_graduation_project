@@ -43,7 +43,7 @@ function download_Submit() {
             document.body.appendChild(element);
             element.click();
             document.body.removeChild(element);
-            alert('asd')
+            alert('다운로드 시작')
         },
         fail : function(){
             

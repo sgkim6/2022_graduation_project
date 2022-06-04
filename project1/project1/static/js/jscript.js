@@ -6,6 +6,7 @@ window.onload = function(){
 function click_Submit() {
 
     var Data = $("#review_input").val();
+    let start = new Date();
 
     $.ajax({
         url : '/api/',
@@ -20,6 +21,9 @@ function click_Submit() {
             $("#review_analysis").html(Data);
             $("#senti").text(response.senti);
             $("#accuracy").text(response.score);
+            let end = new Date();
+            elapsed = (end - start) / 1000;
+            console.log(elapsed);
             // $("#review_analysis_result").html(response);
         },
         fail : function(){

@@ -1,4 +1,5 @@
 import tensorflow as tf
+import matplotlib.pyplot as plt
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from transformers import TextClassificationPipeline
@@ -40,4 +41,3 @@ def classifier(sentence,model_dir):
     # print(f"{score}% 확률로 {senti} 문장입니다.")
 
     return {'senti' : senti, 'score' : score}
-
